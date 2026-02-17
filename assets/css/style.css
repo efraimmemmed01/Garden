@@ -1,0 +1,33 @@
+/* globals.css və ya app.css */
+
+@keyframes slideShow1 {
+  0%, 33.33% { opacity: 1; }
+  33.34%, 100% { opacity: 0; }
+}
+
+@keyframes slideShow2 {
+  0%, 33.33% { opacity: 0; }
+  33.34%, 66.66% { opacity: 1; }
+  66.67%, 100% { opacity: 0; }
+}
+
+@keyframes slideShow3 {
+  0%, 66.66% { opacity: 0; }
+  66.67%, 99.99% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.animate-slide1 { animation: slideShow1 15s infinite; }
+.animate-slide2 { animation: slideShow2 15s infinite; }
+.animate-slide3 { animation: slideShow3 15s infinite; }
+
+
+#rotate-1, #rotate-2, #rotate-3 {
+  transition: transform 3s ease-in-out;
+}
+
+#garden{ 
+background-image: url(/assets/image/nebilim1.png);
+background-repeat: none;
+background-size: cover;
+}

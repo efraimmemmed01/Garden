@@ -1,11 +1,632 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
+    <header>
+        <!-- Qara üst hissə -->
+        <div
+            class="w-[100vw] h-[100%] bg-neutral-800 flex justify-content-center items-center px-10 py-[33px] z-0 gap-[35%] pl-[10%]">
+            <!-- Logo -->
+            <div class="flex items-center gap-4">
+                <img src="assets/image/logo-removebg-preview.png" class="img-olacaq burda w-21 h-21" />
+                <div class="text-white">
+                    <p class="text-2xl font-bold">XTRA<br />GARDEN</p>
+                    <p class="text-[8px] text-gray-400">WORDPRESS THEME</p>
+                </div>
+            </div>
+            <!-- Buttonlar -->
+            <div class="flex gap-6">
+                <!-- Mehtinin buton sayti unutma uiverse-->
+                <div class="flex gap-3 items-center">
+                    <button
+                        class="bg-green-950 text-green-400 border border-green-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
+                        <span
+                            class="bg-green-400 shadow-green-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
+                        <i class="fa-solid fa-phone-volume text-white"></i>
+                    </button>
+                    <div>
+                        <p class="text-gray-600 text-sm">Have any question?</p>
+                        <p class="text-white">+1 (818) 3334455</p>
+                    </div>
+                </div>
+
+                <!-- Location Section -->
+                <div class="flex gap-3 items-center">
+                    <button
+                        class="bg-green-950 text-green-400 border border-green-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
+                        <span
+                            class="bg-green-400 shadow-green-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
+                        <i class="fa-solid fa-location-dot text-white"></i>
+                    </button>
+                    <div>
+                        <p class="text-gray-600 text-sm">Our office address</p>
+                        <p class="text-white">1214 King Street, New York</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ağ esas navim olan hisse -->
+        <nav
+            class="bg-white flex justify-between items-center px-10 py-5 absolute left-1/2 -translate-x-1/2 w-[80%] h-[6%] z-50 rounded-xl shadow-lg top-[16%]">
+            <div class="flex gap-6 items-center">
+                <a href="#" class="bg-[#2a7c21] text-white px-5 py-2 rounded">Home</a>
+                <a href="#">Gardening</a>
+                <a href="#">Services</a>
+                <a href="#">Projects</a>
+                <a href="#">Blog</a>
+                <a href="#">Shops</a>
+                <!-- elave menyu Sekıne -->
+                <div class="relative group">
+                    <a href="#" class="flex items-center gap-1">
+                        Pages
+                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                    </a>
+                    <div
+                        class="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg min-w-[200px] py-2 z-50">
+                        <a href="#" class="block px-6 py-2 hover:bg-gray-100">FAQ</a>
+                        <a href="#" class="block px-6 py-2 hover:bg-gray-100">My account</a>
+                        <a href="#" class="block px-6 py-2 hover:bg-gray-100">Cart</a>
+                        <a href="#" class="block px-6 py-2 hover:bg-gray-100">Checkout</a>
+                        <a href="#" class="block px-6 py-2 hover:bg-gray-100">Submenu 1</a>
+                        <a href="#" class="block px-6 py-2 hover:bg-gray-100">Dropdoün menyu</a>
+                        <a href="#" class="block px-6 py-2 hover:bg-gray-100">Submenu 2</a>
+                    </div>
+                </div>
+                <a href="#">Contact</a>
+               
+            </div>
+            <div class="flex items-center gap-6 ">
+                <i class="fa-brands fa-facebook-f  hover:border hover:bg-[#2a7c21] hover:p-1"></i>
+                <i class="fa-brands fa-x-twitter  hover:border hover:bg-[#2a7c21] hover:p-1"></i>
+                <i class="fa-brands fa-skype  hover:border hover:bg-[#2a7c21] hover:p-1"></i>
+                <i class="fa-brands fa-instagram  hover:border hover:bg-[#2a7c21] hover:p-1"></i>
+                <button
+                    class="text-xs w-32 h-8 rounded bg-[#2a7c21] text-white relative overflow-hidden group z-10 hover:text-white duration-1000">
+                    <span
+                        class="absolute bg-emerald-600 w-36 h-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span>
+                    <span
+                        class="absolute bg-[emerald-800] w-36 h-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>
+                    Get a Free Quote
+                </button>
+            </div>
+            <!-- <i class="fa-solid fa-bars visible-hidden"></i>  burger burdadi -->
+        </nav>
+
+        <!--! Şəkil hissəsi -->
+        <div class="relative w-full h-[500px] flex items-center justify-center overflow-hidden">
+            <!-- Background slides -->
+            <div class="absolute inset-0 -z-10">
+                <div class="absolute inset-0 bg-cover bg-center animate-slide1"
+                    style="background-image: url(&quot;assets/image/bagban1.jpeg&quot;)"></div>
+                <div class="absolute inset-0 bg-cover bg-center animate-slide2"
+                    style="background-image: url(&quot;assets/image/nisuk1.jpg&quot;)"></div>
+                <div class="absolute inset-0 bg-cover bg-center animate-slide3"
+                    style="background-image: url(&quot;assets/image/background2.jpg&quot;)"></div>
+            </div>
+
+            <!-- Content Slides -->
+            <div class="relative z-10 text-center text-white">
+                <!-- Content 1 -->
+                <div class="absolute inset-0 flex flex-col items-center justify-center animate-slide1">
+                    <p class="bg-[#009900] text-white px-8 py-3 rounded-t-2xl mt-10 mr-50 whitespace-nowrap">
+                        XTRA Gardening
+                    </p>
+                    <h1
+                        class="bg-white text-green-800 text-2xl md:text-4xl font-bold px-12 py-6 mb-2 whitespace-nowrap">
+                        The Best Fertilizer Is
+                    </h1>
+                    <p
+                        class="bg-black/70 text-white text-lg md:text-xl px-12 py-4 rounded-b-2xl mb-40 whitespace-nowrap">
+                        A Gardener's Shadow
+                    </p>
+                </div>
+
+                <!-- Content 2 -->
+                <div class="absolute inset-0 flex flex-col items-center justify-center animate-slide2">
+                    <p class="bg-[#009900] text-white px-8 py-3 rounded-t-2xl mr-50 whitespace-nowrap">
+                        XTRA Gardening
+                    </p>
+                    <h1
+                        class="bg-white text-green-800 text-2xl md:text-4xl font-bold px-12 py-6 mb-2 whitespace-nowrap">
+                        Cares Melt When You
+                    </h1>
+                    <p class="bg-black/70 text-white text-lg md:text-xl px-12 py-4 rounded-b-2xl whitespace-nowrap">
+                        Kneel In A Garden
+                    </p>
+                </div>
+
+                <!-- Content 3 -->
+                <div class="absolute inset-0 flex flex-col items-center justify-center animate-slide3">
+                    <p class="bg-[#009900] text-white px-8 py-3 rounded-t-2xl mr-50 whitespace-nowrap">
+                        XTRA Gardening
+                    </p>
+                    <h1
+                        class="bg-white text-green-800 text-2xl md:text-4xl font-bold px-12 py-6 mb-2 whitespace-nowrap">
+                        Healthy Plants, Healthy Life
+                    </h1>
+                    <p class="bg-black/70 text-white text-lg md:text-xl px-12 py-4 rounded-b-2xl whitespace-nowrap">
+                        Nature's Best Products
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--finally axir headerimbitdi-->
+
+    <!-- kartlarim hissesi-->
+    <section class=" container mx-auto px-4 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <!-- Hero Card -->
+            <div
+                class="bg-[#2a7c21] rounded-lg p-10 text-center text-white flex flex-col justify-center shadow-lg hover:border-2 hover:border-[#b4e8af]">
+                <h1 class="text-xl font-bold mb-5">
+                    For All Your <br>Gardening Needs <i class="fa-solid fa-trowel"></i>
+                </h1>
+                <p class="text-base">Home Gardening Supplies <br>and Gifts <i class="fa-solid fa-gift"></i> </p>
+            </div>
+
+            <!-- Service Card 1 -->
+            <div class="bg-white rounded-lg p-8 text-center shadow-lg hover:border-2 hover:border-[#b4e8af]"">
+          <div
+            class=" w-20 h-20 bg-gray-200 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
+                <img src="assets/image/ot1.png" alt="Gardening Services" class="w-[60%] h-[60%] object-contain"
+                    id="rotate-1" />
+            </div>
+            <h2 class="text-xl font-bold text-green-700 mb-4">
+                Gardening Services
+            </h2>
+            <p class="text-gray-600 mb-6">
+                A beautiful garden can transform a property. Whether you're
+                trying to recreate the gardens.
+            </p>
+            <button class="cursor-pointer relative group overflow-hidden border-2 px-8 py-2 border-green-500">
+                <span class="font-bold text-white text-xl relative z-10 group-hover:text-green-500 duration-500">Read
+                    More</span>
+                <span
+                    class="absolute top-0 left-0 w-full bg-green-500 duration-500 group-hover:-translate-x-full h-full"></span>
+                <span
+                    class="absolute top-0 left-0 w-full bg-green-500 duration-500 group-hover:translate-x-full h-full"></span>
+                <span
+                    class="absolute top-0 left-0 w-full bg-green-500 duration-500 delay-300 group-hover:-translate-y-full h-full"></span>
+                <span
+                    class="absolute delay-300 top-0 left-0 w-full bg-green-500 duration-500 group-hover:translate-y-full h-full"></span>
+            </button>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="bg-white rounded-lg p-8 text-center shadow-lg hover:border-2 hover:border-[#b4e8af]">
+            <div
+                class="w-20 h-20 bg-gray-200 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
+                <img src="assets/image/el2.png" alt="Gardening Services" class="w-[60%] h-[60%] object-contain"
+                    id="rotate-2" />
+            </div>
+            <h2 class="text-xl font-bold text-green-700 mb-4">
+                Plants Planting
+            </h2>
+            <p class="text-gray-600 mb-6">
+                A beautiful garden can transform a property. Whether you're
+                trying to recreate the gardens.
+            </p>
+            <button class="cursor-pointer relative group overflow-hidden border-2 px-8 py-2 border-green-500">
+                <span class="font-bold text-white text-xl relative z-10 group-hover:text-green-500 duration-500">Read
+                    More</span>
+                <span
+                    class="absolute top-0 left-0 w-full bg-green-500 duration-500 group-hover:-translate-x-full h-full"></span>
+                <span
+                    class="absolute top-0 left-0 w-full bg-green-500 duration-500 group-hover:translate-x-full h-full"></span>
+                <span
+                    class="absolute top-0 left-0 w-full bg-green-500 duration-500 delay-300 group-hover:-translate-y-full h-full"></span>
+                <span
+                    class="absolute delay-300 top-0 left-0 w-full bg-green-500 duration-500 group-hover:translate-y-full h-full"></span>
+            </button>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="bg-white rounded-lg p-8 text-center shadow-lg hover:border-2 hover:border-[#b4e8af]">
+            <div
+                class="w-20 h-20 bg-gray-200 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
+                <img src="assets/image/vılka3.png" alt="Gardening Services" class="w-[60%] h-[60%] object-contain"
+                    id="rotate-3" />
+            </div>
+            <h2 class="text-xl font-bold text-green-700 mb-4">
+                Gardening Services
+            </h2>
+            <p class="text-gray-600 mb-6">
+                A beautiful garden can transform a property. Whether you're
+                trying to recreate the gardens.
+            </p>
+            <button class="cursor-pointer relative group overflow-hidden border-2 px-8 py-2 border-green-500">
+                <span class="font-bold text-white text-xl relative z-10 group-hover:text-green-500 duration-500">Read
+                    More</span>
+                <span
+                    class="absolute top-0 left-0 w-full bg-green-500 duration-500 group-hover:-translate-x-full h-full"></span>
+                <span
+                    class="absolute top-0 left-0 w-full bg-green-500 duration-500 group-hover:translate-x-full h-full"></span>
+                <span
+                    class="absolute top-0 left-0 w-full bg-green-500 duration-500 delay-300 group-hover:-translate-y-full h-full"></span>
+                <span
+                    class="absolute delay-300 top-0 left-0 w-full bg-green-500 duration-500 group-hover:translate-y-full h-full"></span>
+            </button>
+        </div>
+        </div>
+    </section>
+    <!--!  bagban qiz eli olan hissede qaldin unutma!-->
+    <section class="relative py-20" id="garden">
+        <!-- overlay card -->
+        <div class="max-w-5xl mx-auto px-6 pt-30">
+            <div class="bg-white/95 backdrop-blur rounded-2xl shadow-xl p-8 md:p-12 max-w-xl ml-auto">
+
+                <p class="text-gray-400 mb-2">Everything is perfect</p>
+
+                <h2 class="text-3xl md:text-4xl font-semibold text-gray-900 mb-5">
+                    It's Time for the <span class="text-green-600">Gardening</span>
+                </h2>
+
+
+                <p class="text-gray-600 leading-relaxed mb-8">
+                    Call gardening team today for getting free quote on your new
+                    home garden ...
+                </p>
+
+                <div class="flex items-center gap-6">
+                    <button
+                        class="bg-[#1d6c2d] border border-[#62f469] border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
+                        <span
+                            class="bg-[#1d6c2d] shadow-[#8cdb15] absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
+                        Contact us today
+                    </button>
+                    <p class="text-green-700 font-medium hover:underline">
+                        Learn more
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- gridle olmalidi unutma sehere -->
+    <section class="max-w-6xl mx-auto px-6 py-16  relative">
+        <div class="flex flex-col lg:flex-row items-start gap-10">
+
+            <!-- Sol hisse -->
+            <div class="flex-1 ">
+                <!-- Bashliq -->
+                <p class="text-gray-400 text-sm mb-2">What we can do</p>
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">
+                    Turn your home into <span class="text-green-500">Greenhouse!</span>
+                </h2>
+                <p class="text-gray-500 mb-8 max-w-md">
+                    Once plants are in the garden, one of the biggest challenges is keeping
+                    weeds, pests, and diseases out the garden.
+                </p>
+
+                <!-- Xidmetler kart poisition buna isledim-->
+                <div class="bg-white rounded- shadow p-8 absolute top-60 left-40">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+                        <!-- Its -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-green-700 rounded-full flex items-center justify-center shrink-0">
+                                <p><i class="fa-solid fa-check "></i></p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800">Pest and weeds</p>
+                                <p class="text-gray-400 text-sm">Pest control and weeds removal</p>
+                            </div>
+                        </div>
+
+                        <!-- It1-->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-green-700 rounded-full flex items-center justify-center shrink-0">
+                                <p><i class="fa-solid fa-check"></i></p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800">Gardening Design</p>
+                                <p class="text-gray-400 text-sm">Landscaping Design & Promenade</p>
+                            </div>
+                        </div>
+
+                        <!-- It2 -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-green-700 rounded-full flex items-center justify-center shrink-0">
+                                <p><i class="fa-solid fa-check"></i></p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800">Maintenance</p>
+                                <p class="text-gray-400 text-sm">Hedge Trimming & Maintenance</p>
+                            </div>
+                        </div>
+
+                        <!-- It3-->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-green-700 rounded-full flex items-center justify-center shrink-0">
+                                <p><i class="fa-solid fa-check"></i></p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800">Water fountain</p>
+                                <p class="text-gray-400 text-sm">Water & drip irrigation system</p>
+                            </div>
+                        </div>
+
+                        <!-- It4 -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-green-700 rounded-full flex items-center justify-center shrink-0">
+                                <p><i class="fa-solid fa-check"></i></p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800">Soil erosion</p>
+                                <p class="text-gray-400 text-sm">Arresting Soil erosion & mulching</p>
+                            </div>
+                        </div>
+
+                        <!-- It5 -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-green-700 rounded-full flex items-center justify-center shrink-0">
+                                <p><i class="fa-solid fa-check"></i></p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800">Restoration methods</p>
+                                <p class="text-gray-400 text-sm">Lawn maintenance & restoration</p>
+                            </div>
+                        </div>
+
+                        <!-- It6 -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-green-700 rounded-full flex items-center justify-center shrink-0">
+                                <p><i class="fa-solid fa-check"></i></p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800">Watering plants</p>
+                                <p class="text-gray-400 text-sm">Watering plants and sprucing up</p>
+                            </div>
+                        </div>
+
+                        <!-- It7 -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-green-700 rounded-full flex items-center justify-center shrink-0">
+                                <p><i class="fa-solid fa-check"></i></p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800">Garden fencing</p>
+                                <p class="text-gray-400 text-sm">Picket fencing or hedge?</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Sag hisse - Sekil -->
+            <div class="lg:w-[420px] w-full mt-10 lg:mt-0 shrink-0 right-30">
+                <video class="w-full rounded-xl" autoplay loop muted>
+                    <source src="assets/video/bagbanvideo.mp4" type="video/mp4">
+                </video>
+            </div>
+    </section>
+
+    <!-- ortada sekil amazing filan yazib ordasan unutma-->
+    <section class="relative w-full py-20 px-6"
+        style="background-image: url('assets/image/qeseng.jpeg'); background-size: cover; background-position: center;">
+        <!-- Content -->
+        <div class="relative z-10 text-center mb-10">
+            <p class="text-gray-400 text-sm mb-2">The amazing benefits of gardening</p>
+            <h2 class="text-3xl font-bold text-white">Our Recent Amazing <span class="text-green-500">Projects</span>
+            </h2>
+        </div>
+
+        <!-- Grid -->
+        <div class="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+
+            <img src="assets/image/bir.jpg"
+                class="w-full h-40 object-cover rounded-xl transition-transform duration-300 hover:scale-105" />
+            <img src="assets/image/iki.jpg"
+                class="w-full h-40 object-cover rounded-xl transition-transform duration-300 hover:scale-105" />
+            <img src="assets/image/uc.jpg"
+                class="w-full h-40 object-cover rounded-xl transition-transform duration-300 hover:scale-105" />
+            <img src="assets/image/dord.jpg"
+                class="w-full h-40 object-cover rounded-xl transition-transform duration-300 hover:scale-105" />
+            <img src="assets/image/bes.jpg"
+                class="w-full h-40 object-cover rounded-xl transition-transform duration-300 hover:scale-105" />
+            <img src="assets/image/altti.jpg"
+                class="w-full h-40 object-cover rounded-xl transition-transform duration-300 hover:scale-105" />
+            <img src="assets/image/yeddi.jpg"
+                class="w-full h-40 object-cover rounded-xl transition-transform duration-300 hover:scale-105" />
+            <img src="assets/image/sekkiz.webp"
+                class="w-full h-40 object-cover rounded-xl transition-transform duration-300 hover:scale-105" />
+
+        </div>
+    </section>
+    <!-- reqemler -->
+    <section class="max-w-5xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-16">
     
+        <!-- Sol - Kuti -->
+        <div class="border-4 border-green-700 w-52 h-52 flex flex-col items-center justify-center shrink-0">
+            <p class="text-6xl font-bold text-green-700">37</p>
+            <p class="text-xl font-bold text-gray-800 mt-2">YEARS</p>
+            <p class="text-sm font-bold text-gray-600">EXPERIENCE</p>
+        </div>
+    
+        <!-- Sag - Metn -->
+        <div>
+            <p class="text-gray-400 text-sm mb-2">A little about us</p>
+            <h2 class="text-2xl font-bold text-gray-900 mb-3">
+                We can handle everything <span class="text-green-500">for you!</span>
+            </h2>
+    
+            <p class="text-gray-500 mb-8">
+                We at The Garden are proud to offer carefully designed landscapes crafted to suit our
+                commercial clients' preferences while prioritizing sustainability.
+            </p>
+    
+            <!-- Statistika -->
+            <div class="flex gap-12">
+                <div>
+                    <p class="text-4xl font-light text-gray-800">270</p>
+                    <p class="text-green-700 text-sm font-semibold">Projects Done</p>
+                </div>
+                <div>
+                    <p class="text-4xl font-light text-gray-800">15</p>
+                    <p class="text-green-700 text-sm font-semibold">Awards Winning</p>
+                </div>
+                <div>
+                    <p class="text-4xl font-light text-gray-800">32</p>
+                    <p class="text-green-700 text-sm font-semibold">Expert Gardners</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- dollar hissesi -->
+    <section class="bg-gray-100 py-16 px-6">
+    
+        <!-- Bashliq -->
+        <div class="text-center mb-10">
+            <p class="text-gray-400 text-sm mb-2">Our services packages</p>
+            <h2 class="text-3xl font-bold text-gray-900">There Are The Services We Own <span class="text-green-600">To
+                    You</span></h2>
+            <div class="w-10 h-1 bg-green-600 mx-auto mt-3"></div>
+        </div>
+    
+        <!-- Kartlar -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+    
+            <!-- SMALL -->
+            <div class="bg-white rounded p-6 flex flex-col items-center text-center shadow">
+                <p class="text-green-600 font-bold mb-4">SMALL</p>
+                <p class="text-5xl font-bold mb-1">$39 <span class="text-base font-normal text-gray-400"></span></p>
+                <div class="w-full mt-6 text-sm text-gray-600 space-y-3">
+                    <p class="border-b pb-2">Gardening Service</p>
+                    <p class="border-b pb-2">Gardens Party</p>
+                    <p class="border-b pb-2 line-through text-gray-400">Planting seeds</p>
+                    <p class="border-b pb-2 line-through text-gray-400">Picket fencing</p>
+                    <p class="border-b pb-2 line-through text-gray-400">Fowerbeds Maintenance</p>
+                </div>
+                <button
+                    class="text-xs w-32 h-8 rounded bg-[#2a7c21] text-white relative overflow-hidden group z-10 hover:text-white duration-1000 mt-20">
+                    <span
+                        class="absolute bg-emerald-600 w-36 h-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span>
+                    <span
+                        class="absolute bg-[emerald-800] w-36 h-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>
+                    order now
+                </button>
+            </div>
+    
+            <!-- STANDARD -->
+            <div class="bg-white rounded p-6 flex flex-col items-center text-center shadow">
+                <p class="text-green-600 font-bold mb-4">STANDARD</p>
+                <p class="text-5xl font-bold mb-1">$59 <span class="text-base font-normal text-gray-400">/ mo</span></p>
+                <div class="w-full mt-6 text-sm text-gray-600 space-y-3">
+                    <p class="border-b pb-2">Gardening Service</p>
+                    <p class="border-b pb-2">Gardens Party</p>
+                    <p class="border-b pb-2">Planting seeds</p>
+                    <p class="border-b pb-2 line-through text-gray-400">Picket fencing</p>
+                    <p class="border-b pb-2 line-through text-gray-400">Fowerbeds Maintenance</p>
+                </div>
+                <button
+                    class="text-xs w-32 h-8 rounded bg-[#2a7c21] text-white relative overflow-hidden group z-10 hover:text-white duration-1000 mt-20">
+                    <span
+                        class="absolute bg-emerald-600 w-36 h-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span>
+                    <span
+                        class="absolute bg-[emerald-800] w-36 h-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>
+                    order now
+                </button>
+            </div>
+    
+            <!-- BUSINESS -->
+            <div class="bg-green-700 rounded p-6 flex flex-col items-center text-center shadow">
+                <p class="text-white font-bold mb-4">BUSINESS</p>
+                <p class="text-5xl font-bold text-white mb-1">$79 <span class="text-base font-normal text-green-200">/
+                        mo</span></p>
+                <div class="w-full mt-6 text-sm text-white space-y-3">
+                    <p class="border-b border-green-500 pb-2">Gardening Service</p>
+                    <p class="border-b border-green-500 pb-2">Gardens Party</p>
+                    <p class="border-b border-green-500 pb-2">Planting seeds</p>
+                    <p class="border-b border-green-500 pb-2">Picket fencing</p>
+                    <p class="border-b border-green-500 pb-2 line-through text-green-300">Fowerbeds Maintenance</p>
+                </div>
+                <button
+                    class="text-xs w-32 h-8 rounded bg-[#2a7c21] text-white relative overflow-hidden group z-10 hover:text-white duration-1000 mt-20">
+                    <span
+                        class="absolute bg-emerald-600 w-36 h-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span>
+                    <span
+                        class="absolute bg-[emerald-800] w-36 h-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>
+                    order now
+                </button>
+            </div>
+    
+            <!-- ULTIMATE -->
+            <div class="bg-white rounded p-6 flex flex-col items-center text-center shadow">
+                <p class="text-green-600 font-bold mb-4">ULTIMATE</p>
+                <p class="text-5xl font-bold mb-1">$99 <span class="text-base font-normal text-gray-400">/ mo</span></p>
+                <div class="w-full mt-6 text-sm text-gray-600 space-y-3">
+                    <p class="border-b pb-2">Gardening Service</p>
+                    <p class="border-b pb-2">Gardens Party</p>
+                    <p class="border-b pb-2">Planting seeds</p>
+                    <p class="border-b pb-2">Picket fencing</p>
+                    <p class="border-b pb-2">Fowerbeds Maintenance</p>
+                </div>
+                <button
+                    class="text-xs w-32 h-8 rounded bg-[#2a7c21] text-white relative overflow-hidden group z-10 hover:text-white duration-1000 mt-20">
+                    <span
+                        class="absolute bg-emerald-600 w-36 h-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span>
+                    <span
+                        class="absolute bg-[emerald-800] w-36 h-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>
+                    order now
+                </button>
+            </div>
+    
+        </div>
+
+</section>
+            <!-- footer -->
+            <footer class="relative w-full py-16 text-center"
+                style="background-image: url('assets/image/footer-bg.jpg'); background-size: cover; background-position: center;">
+                <!-- Content -->
+                <div class="relative z-10 flex flex-col items-center gap-5">
+                    <!-- Logo -->
+                    <div class="flex items-center gap-3">
+                        <img src="assets/image/logo-removebg-preview.png" class="w-14 h-14" />
+                        <div class="text-white text-left">
+                            <p class="text-xl font-bold">XTRA GARDEN</p>
+                            <p class="text-[9px] text-gray-400">WORDPRESS THEME</p>
+                        </div>
+                    </div>
+                    <!-- Melumat -->
+                    <p class="text-gray-300">Call Us: 001 (818) 23 33 456</p>
+                    <p class="text-gray-300">1214 King Land Street, New York, USA</p>
+                    <!-- Buton -->
+                    <button
+                        class="text-xs w-32 h-8 rounded bg-[#2a7c21] text-white relative overflow-hidden group z-10 hover:text-white duration-1000">
+                        <span
+                            class="absolute bg-emerald-600 w-36 h-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span>
+                        <span
+                            class="absolute bg-[emerald-800] w-36 h-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>
+                        Get a Free Quote
+                    </button>
+                    <!-- Sosial ikonlar -->
+                    <div class="flex gap-6 text-white text-lg">
+                 <i class="fa-brands fa-facebook-f hover:text-green-400 cursor-pointer"></i>
+                <i class="fa-brands fa-x-twitter hover:text-green-400 cursor-pointer"></i>
+                <i class="fa-brands fa-skype  hover:text-green-400 cursor-pointer"></i>
+                <i class="fa-brands fa-instagram  hover:text-green-400 cursor-pointer"></i>
+                    </div>
+                    <!-- Xett -->
+                    <div class="w-full max-w-2xl h-px bg-gray-600"></div>
+            
+                    <!-- Copyright -->
+                    <p class="text-gray-500 text-sm"><i class="fa-regular fa-copyright"></i>Copyright 2026. All Rights Reserved, Proudly powered by WordPress</p>
+                </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
 </body>
+
 </html>
