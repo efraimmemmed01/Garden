@@ -19,3 +19,26 @@ document.addEventListener('DOMContentLoaded', function() {
   }, 3000);
 });
 console.log(rotate1, rotate2, rotate3);
+
+
+// dark mod 
+
+// let body = document.querySelector ("body")
+// let mood = getElementById ("mood")
+// function Dark(){
+// body.classList.add("dark")
+// }
+
+// mood.addEventListener("click" , () => {
+//   if(mood.classList.contains("fa-moon")){
+//      mood.classList.remove("fa-moon")
+//     mood.classList.add("fa-sun")
+//   } else{
+//          mood.classList.remove("fa-sun")
+//     mood.classList.add("fa-moon")
+//   }
+// })
+// function Light(){
+// body.classList.add("Light")
+// }
+
