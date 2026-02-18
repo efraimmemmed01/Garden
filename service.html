@@ -1,11 +1,787 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XTRA Garden — Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Nunito:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Nunito", sans-serif;
+      }
+      .display {
+        font-family: "Playfair Display", serif;
+      }
+
+      /* Scroll  */
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .brush {
+        height: 44px;
+        background: #1a1a1a;
+        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 44' preserveAspectRatio='none'%3E%3Cpath d='M0 22 Q180 4 360 22 Q540 40 720 22 Q900 4 1080 22 Q1260 40 1440 22 L1440 44 L0 44Z' fill='%23000'/%3E%3C/svg%3E")
+          no-repeat center/cover;
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 44' preserveAspectRatio='none'%3E%3Cpath d='M0 22 Q180 4 360 22 Q540 40 720 22 Q900 4 1080 22 Q1260 40 1440 22 L1440 44 L0 44Z' fill='%23000'/%3E%3C/svg%3E")
+          no-repeat center/cover;
+      }
+      .brush-top {
+        height: 44px;
+        background: #1a1a1a;
+        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 44' preserveAspectRatio='none'%3E%3Cpath d='M0 22 Q180 40 360 22 Q540 4 720 22 Q900 40 1080 22 Q1260 4 1440 22 L1440 0 L0 0Z' fill='%23000'/%3E%3C/svg%3E")
+          no-repeat center/cover;
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 44' preserveAspectRatio='none'%3E%3Cpath d='M0 22 Q180 40 360 22 Q540 4 720 22 Q900 40 1080 22 Q1260 4 1440 22 L1440 0 L0 0Z' fill='%23000'/%3E%3C/svg%3E")
+          no-repeat center/cover;
+      }
+
+      /* Pricing card hover */
+      .pricing-card {
+        transition:
+          background 0.3s,
+          transform 0.3s,
+          box-shadow 0.3s;
+        cursor: pointer;
+      }
+      .pricing-card:hover {
+        background: #2e8b22 !important;
+        transform: scale(1.04);
+        box-shadow: 0 20px 40px rgba(46, 139, 34, 0.35) !important;
+      }
+      .pricing-card:hover * {
+        color: white !important;
+      }
+      .pricing-card:hover .order-btn {
+        background: white !important;
+        color: #2e8b22 !important;
+        border-color: white !important;
+      }
+      .pricing-card:hover .feat-dot {
+        background: white !important;
+      }
+      .pricing-card:hover .feat-dot-off {
+        background: rgba(255, 255, 255, 0.4) !important;
+      }
+
+      /* Feature line-through for disabled */
+      .feature-off {
+        opacity: 0.35;
+        text-decoration: line-through;
+      }
+      .pricing-card:hover .feature-off {
+        opacity: 0.45;
+      }
+
+      @keyframes countUp {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white overflow-x-hidden">
+     <header class="bg-[#1a1a1a] text-white py-6 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="text-4xl font-black tracking-tighter"><img src="assets/image/logo-garden.png" width="146"  height="46" alt=""></div>
+                
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-8 items-center">
+                <div class="flex items-center gap-3">
+                    <div class="bg-green-600 p-3 rounded-md">
+                        <svg class="w-6 h-6 fill-white" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400">Have any questions?</p>
+                        <p class="font-bold text-lg">+1 (818) 333 44 55</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 border-l border-gray-700 pl-8  lg:flex">
+                    <div class="bg-green-600 p-3 rounded-md">
+                        <svg class="w-6 h-6 fill-white" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400">Our office address</p>
+                        <p class="font-bold text-lg">1214 King Street, New York</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <ul class="hidden md:flex items-center gap-8 text-sm font-bold text-gray-700 uppercase tracking-tight">
+                    <li><a href="index.html" class="hover:text-green-600 transition-colors">Home</a></li>
+                    <li><a href="garden.html" class="hover:text-green-600 transition-colors">Gardening</a></li>
+                    <li><a href="service.html" class="hover:text-green-600 transition-colors">Services</a></li>
+                    <li><a href="projects.html" class="hover:text-green-600 transition-colors">Projects</a></li>
+                    <li><a href="blog.html" class="hover:text-green-600 transition-colors">Blog</a></li>
+                    <li><a href="shop.html" class="hover:text-green-600 transition-colors">Shop</a></li>
+                    <li class="group relative flex items-center gap-1 hover:text-green-600 cursor-pointer transition-colors">
+                        Pages <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </li>
+                    <li><a href="contact.html" class="hover:text-green-600 transition-colors">Contact</a></li>
+                </ul>
+
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2 border-r border-gray-200 pr-4  lg:flex">
+                        <a href="#" class="p-2 bg-gray-50 rounded hover:text-blue-600 transition-colors"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.378 14.192 5 15.115 5H18V0h-3.808C10.596 0 9 1.583 9 4.615V8z"/></svg></a>
+                        <a href="#" class="p-2 bg-gray-50 rounded hover:text-black transition-colors"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="#" class="p-2 bg-gray-50 rounded hover:text-pink-600 transition-colors"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                    </div>
+                    <button class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded font-bold text-sm transition-all shadow-md">Get a Free Quote</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--  SECTION 1 — OUR PERFECT SERVICES  -->
+    <section class="py-16 px-6 md:px-20 bg-white">
+      <div class="text-center mb-12 reveal">
+        <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">
+          What we can do for your garden
+        </p>
+        <h2 class="display text-3xl">
+          Our Perfect <span class="text-green-600">Services</span>
+        </h2>
+        <div class="w-9 h-0.5 bg-green-600 mx-auto mt-3"></div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+        <!-- Card 1 -->
+        <div class="flex flex-col items-center text-center group reveal">
+          <div class="w-16 h-16 mb-4 flex items-center justify-center">
+            <svg viewBox="0 0 64 64" class="w-14 h-14">
+              <circle cx="32" cy="32" r="30" fill="#e8f5e0" />
+              <path
+                d="M32 14 Q22 24 22 34 Q22 44 32 50 Q42 44 42 34 Q42 24 32 14Z"
+                fill="#2e8b22"
+              />
+              <path
+                d="M22 34 Q32 28 42 34"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+              />
+              <rect x="29" y="48" width="6" height="8" fill="#6b4c2a" />
+            </svg>
+          </div>
+          <h4 class="text-sm font-bold text-green-600 mb-2">
+            Gardening Services
+          </h4>
+          <p class="text-xs text-gray-500 leading-relaxed">
+            A beautiful garden can transform a property. Whether you're trying
+            to recreate the garden.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="flex flex-col items-center text-center group reveal">
+          <div class="w-16 h-16 mb-4 flex items-center justify-center">
+            <svg viewBox="0 0 64 64" class="w-14 h-14">
+              <circle cx="32" cy="32" r="30" fill="#e8f5e0" />
+              <path
+                d="M16 40 Q20 28 28 26 Q36 24 40 32"
+                fill="none"
+                stroke="#2e8b22"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <path
+                d="M28 26 L24 16 M24 16 L20 20 M24 16 L28 12"
+                stroke="#2e8b22"
+                stroke-width="2.5"
+                stroke-linecap="round"
+              />
+              <ellipse cx="40" cy="36" rx="8" ry="6" fill="#2e8b22" />
+            </svg>
+          </div>
+          <h4 class="text-sm font-bold text-green-600 mb-2">Plants Planting</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">
+            Whether you choose to eat vegetarian or just want to eat a little
+            healthier from your garden.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="flex flex-col items-center text-center group reveal">
+          <div class="w-16 h-16 mb-4 flex items-center justify-center">
+            <svg viewBox="0 0 64 64" class="w-14 h-14">
+              <circle cx="32" cy="32" r="30" fill="#e8f5e0" />
+              <circle cx="32" cy="26" r="10" fill="#2e8b22" />
+              <path
+                d="M22 36 Q24 44 32 46 Q40 44 42 36"
+                fill="none"
+                stroke="#2e8b22"
+                stroke-width="2.5"
+              />
+              <path
+                d="M28 44 L26 54 M36 44 L38 54"
+                stroke="#6b9aff"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <ellipse
+                cx="32"
+                cy="54"
+                rx="6"
+                ry="3"
+                fill="#a0c4ff"
+                opacity=".5"
+              />
+            </svg>
+          </div>
+          <h4 class="text-sm font-bold text-green-600 mb-2">Water Fountain</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">
+            When is best to create the garden of your dreams, get some expert
+            help from us today.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="flex flex-col items-center text-center group reveal">
+          <div class="w-16 h-16 mb-4 flex items-center justify-center">
+            <svg viewBox="0 0 64 64" class="w-14 h-14">
+              <circle cx="32" cy="32" r="30" fill="#e8f5e0" />
+              <line
+                x1="28"
+                y1="14"
+                x2="42"
+                y2="44"
+                stroke="#2e8b22"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+              <line
+                x1="36"
+                y1="14"
+                x2="22"
+                y2="44"
+                stroke="#b5713a"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+              <circle cx="28" cy="14" r="5" fill="#2e8b22" />
+              <circle cx="36" cy="14" r="5" fill="#b5713a" />
+            </svg>
+          </div>
+          <h4 class="text-sm font-bold text-green-600 mb-2">
+            Gardening Supplies
+          </h4>
+          <p class="text-xs text-gray-500 leading-relaxed">
+            To create the garden of your dreams, get some expert help from us
+            today and other days.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brush divider down -->
+    <div class="brush"></div>
+
+    <!-- SECTION 2 — PROJECTS / PRICING (dark bg)  -->
+    <section class="bg-gray-900 py-16 px-6 md:px-20">
+      <div class="text-center mb-12 reveal">
+        <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">
+          The amazing benefits of gardening
+        </p>
+        <h2 class="display text-3xl text-white">
+          Our Recent Amazing <span class="text-green-400">Projects</span>
+        </h2>
+        <div class="w-9 h-0.5 bg-green-500 mx-auto mt-3"></div>
+      </div>
+
+      <!-- Pricing cards -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto items-center"
+      >
+        <!-- SMALL -->
+        <div
+          class="pricing-card bg-white rounded-xl shadow-lg p-6 flex flex-col reveal"
+        >
+          <p
+            class="text-xs font-bold text-green-600 uppercase tracking-widest border-b border-gray-100 pb-3 mb-4"
+          >
+            Small
+          </p>
+          <div class="flex items-end gap-1 mb-4">
+            <span class="display text-4xl font-bold text-gray-800">$39</span>
+            <span class="text-gray-400 text-sm mb-1">/ mo</span>
+          </div>
+          <ul class="text-xs text-gray-600 space-y-2 mb-6 flex-1">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span
+              >Gardening Service
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>Gardens
+              Party
+            </li>
+            <li class="flex items-center gap-2 feature-off">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span>Planting
+              seeds
+            </li>
+            <li class="flex items-center gap-2 feature-off">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span>Picket
+              fencing
+            </li>
+            <li class="flex items-center gap-2 feature-off">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span
+              >Flowerbeds Maintenance
+            </li>
+          </ul>
+          <button
+            class="order-btn w-full py-2.5 rounded-lg border-2 border-green-600 text-green-600 text-sm font-bold hover:bg-green-600 hover:text-white transition-colors"
+          >
+            Order Now
+          </button>
+        </div>
+
+        <!-- STANDARD -->
+        <div
+          class="pricing-card bg-white rounded-xl shadow-lg p-6 flex flex-col reveal"
+        >
+          <p
+            class="text-xs font-bold text-green-600 uppercase tracking-widest border-b border-gray-100 pb-3 mb-4"
+          >
+            Standard
+          </p>
+          <div class="flex items-end gap-1 mb-4">
+            <span class="display text-4xl font-bold text-gray-800">$59</span>
+            <span class="text-gray-400 text-sm mb-1">/ mo</span>
+          </div>
+          <ul class="text-xs text-gray-600 space-y-2 mb-6 flex-1">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span
+              >Gardening Service
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>Gardens
+              Party
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span
+              >Planting seeds
+            </li>
+            <li class="flex items-center gap-2 feature-off">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span>Picket
+              fencing
+            </li>
+            <li class="flex items-center gap-2 feature-off">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span
+              >Flowerbeds Maintenance
+            </li>
+          </ul>
+          <button
+            class="order-btn w-full py-2.5 rounded-lg border-2 border-green-600 text-green-600 text-sm font-bold hover:bg-green-600 hover:text-white transition-colors"
+          >
+            Order Now
+          </button>
+        </div>
+
+        <!-- BUSINESS -->
+        <div
+          class="pricing-card bg-white rounded-xl shadow-lg p-6 flex flex-col reveal"
+        >
+          <p
+            class="text-xs font-bold text-green-600 uppercase tracking-widest border-b border-gray-100 pb-3 mb-4"
+          >
+            Business
+          </p>
+          <div class="flex items-end gap-1 mb-4">
+            <span class="display text-4xl font-bold text-gray-800">$79</span>
+            <span class="text-gray-400 text-sm mb-1">/ mo</span>
+          </div>
+          <ul class="text-xs text-gray-600 space-y-2 mb-6 flex-1">
+            <li class="flex items-center gap-2">
+              <span
+                class="feat-dot w-1.5 h-1.5 rounded-full bg-green-500"
+              ></span
+              >Gardening Service
+            </li>
+            <li class="flex items-center gap-2">
+              <span
+                class="feat-dot w-1.5 h-1.5 rounded-full bg-green-500"
+              ></span
+              >Gardens Party
+            </li>
+            <li class="flex items-center gap-2">
+              <span
+                class="feat-dot w-1.5 h-1.5 rounded-full bg-green-500"
+              ></span
+              >Planting seeds
+            </li>
+            <li class="flex items-center gap-2">
+              <span
+                class="feat-dot w-1.5 h-1.5 rounded-full bg-green-500"
+              ></span
+              >Picket fencing
+            </li>
+            <li class="flex items-center gap-2 feature-off">
+              <span
+                class="feat-dot-off w-1.5 h-1.5 rounded-full bg-gray-300"
+              ></span
+              >Flowerbeds Maintenance
+            </li>
+          </ul>
+          <button
+            class="order-btn w-full py-2.5 rounded-lg border-2 border-green-600 text-green-600 text-sm font-bold hover:bg-green-600 hover:text-white transition-colors"
+          >
+            Order Now
+          </button>
+        </div>
+
+        <!-- ULTIMATE -->
+        <div
+          class="pricing-card bg-white rounded-xl shadow-lg p-6 flex flex-col reveal"
+        >
+          <p
+            class="text-xs font-bold text-green-600 uppercase tracking-widest border-b border-gray-100 pb-3 mb-4"
+          >
+            Ultimate
+          </p>
+          <div class="flex items-end gap-1 mb-4">
+            <span class="display text-4xl font-bold text-gray-800">$99</span>
+            <span class="text-gray-400 text-sm mb-1">/ mo</span>
+          </div>
+          <ul class="text-xs text-gray-600 space-y-2 mb-6 flex-1">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span
+              >Gardening Service
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>Gardens
+              Party
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span
+              >Planting seeds
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>Picket
+              fencing
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span
+              >Flowerbeds Maintenance
+            </li>
+          </ul>
+          <button
+            class="order-btn w-full py-2.5 rounded-lg border-2 border-green-600 text-green-600 text-sm font-bold hover:bg-green-600 hover:text-white transition-colors"
+          >
+            Order Now
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brush divider top -->
+    <div class="brush-top"></div>
+
+    <!--  SECTION 3 — MAINTENANCE GARDENING -->
+    <section class="py-16 px-6 md:px-20 bg-white">
+      <!-- Row 1: image left, text right -->
+      <div
+        class="flex flex-col md:flex-row gap-0 items-stretch max-w-4xl mx-auto mb-12 reveal"
+      >
+        <!-- Image overlapping card -->
+        <div class="relative md:w-1/2">
+          <img
+            src="assets/image/p1-1.jpg"
+            class="w-full h-52 md:h-64 object-cover rounded-xl shadow-lg"
+            alt="maintenance"
+          />
+        </div>
+        <!-- Text card overlapping the image -->
+        <div
+          class="bg-white rounded-xl shadow-lg p-8 md:-ml-10 md:mt-8 z-10 flex flex-col justify-center md:w-3/5"
+        >
+          <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">
+            Gardening services
+          </p>
+          <h3 class="display text-2xl mb-1">
+            Maintenance <span class="text-green-600">Gardening</span>
+          </h3>
+          <div class="w-8 h-0.5 bg-green-600 mb-4"></div>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            Plants are expensive and need to be looked after. For clients who
+            have used any of our services, we can offer on-going advice on
+            design, styling and planting. At Gardening, we take a cooperative
+            approach, developing the design concept together with our clients,
+            tailoring the service according to their taste, needs and budget.
+          </p>
+        </div>
+      </div>
+
+      <!-- Row 2: text left, image right -->
+      <div
+        class="flex flex-col md:flex-row gap-0 items-stretch max-w-4xl mx-auto reveal"
+      >
+        <!-- Text card -->
+        <div
+          class="bg-white rounded-xl shadow-lg p-8 md:mr-40px md:mb-8 z-10 flex flex-col justify-center md:w-3/5"
+        >
+          <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">
+            Gardening landscape
+          </p>
+          <h3 class="display text-2xl mb-1">
+            Remodeling of <span class="text-green-600">Garden</span>
+          </h3>
+          <div class="w-8 h-0.5 bg-green-600 mb-4"></div>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            Plants are expensive and need to be looked after. For clients who
+            have used any of our services, we can offer on-going advice on
+            design, styling and planting. At Gardening, we take a cooperative
+            approach, developing the design concept together with our clients.
+          </p>
+        </div>
+        <!-- Image -->
+        <div class="relative md:w-1/2">
+          <img
+            src="assets/image/hau.jpg"
+            class="w-full h-52 md:h-64 object-cover rounded-xl shadow-lg"
+            alt="remodeling"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ SECTION 4 — PARTNER LOGOS ═══════════════════ -->
+    <section class="py-12 px-6 md:px-20 bg-gray-50 border-t border-gray-100">
+      <div
+        class="flex flex-wrap justify-center items-center gap-10 max-w-4xl mx-auto reveal"
+      >
+        <!-- Herbalab -->
+        <div
+          class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity cursor-default"
+        >
+          <svg viewBox="0 0 50 50" class="w-10 h-10">
+            <circle cx="25" cy="25" r="23" fill="#e8f5e0" />
+            <path d="M25 10 Q17 22 25 38 Q33 22 25 10Z" fill="#2e8b22" />
+            <path
+              d="M14 28 Q25 22 36 28"
+              fill="none"
+              stroke="#2e8b22"
+              stroke-width="2"
+            />
+          </svg>
+          <span class="text-xs font-bold text-gray-500 uppercase tracking-wider"
+            >Herbalab</span
+          >
+        </div>
+
+        <!-- Landscape -->
+        <div
+          class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity cursor-default"
+        >
+          <svg viewBox="0 0 50 50" class="w-10 h-10">
+            <circle cx="25" cy="25" r="23" fill="#e8f5e0" />
+            <path
+              d="M12 34 Q18 18 25 24 Q32 30 38 14"
+              fill="none"
+              stroke="#2e8b22"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+            <circle cx="25" cy="24" r="3.5" fill="#2e8b22" />
+          </svg>
+          <span class="text-xs font-bold text-gray-500 uppercase tracking-wider"
+            >Landscape</span
+          >
+        </div>
+
+        <!-- Square Tree -->
+        <div
+          class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity cursor-default"
+        >
+          <svg viewBox="0 0 50 50" class="w-10 h-10">
+            <rect x="2" y="2" width="46" height="46" rx="8" fill="#e8f5e0" />
+            <rect x="15" y="8" width="20" height="20" rx="3" fill="#2e8b22" />
+            <rect x="21" y="28" width="8" height="12" fill="#2e8b22" />
+          </svg>
+          <span class="text-xs font-bold text-gray-500 uppercase tracking-wider"
+            >Square Tree</span
+          >
+        </div>
+
+        <!-- Tree Vintage -->
+        <div
+          class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity cursor-default"
+        >
+          <svg viewBox="0 0 50 50" class="w-10 h-10">
+            <circle cx="25" cy="25" r="23" fill="#e8f5e0" />
+            <ellipse cx="25" cy="20" rx="10" ry="12" fill="#2e8b22" />
+            <rect x="22" y="30" width="6" height="9" fill="#6b4c2a" />
+          </svg>
+          <span class="text-xs font-bold text-gray-500 uppercase tracking-wider"
+            >Tree Vintage</span
+          >
+        </div>
+
+        <!-- Leavestar -->
+        <div
+          class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity cursor-default"
+        >
+          <svg viewBox="0 0 50 50" class="w-10 h-10">
+            <circle cx="25" cy="25" r="23" fill="#e8f5e0" />
+            <path
+              d="M25 8 Q35 16 35 26 Q25 38 15 26 Q15 16 25 8Z"
+              fill="#2e8b22"
+            />
+            <line
+              x1="25"
+              y1="8"
+              x2="25"
+              y2="38"
+              stroke="#fff"
+              stroke-width="1.5"
+            />
+          </svg>
+          <span class="text-xs font-bold text-gray-500 uppercase tracking-wider"
+            >Leavestar</span
+          >
+        </div>
+
+        <!-- Gardenpoint -->
+        <div
+          class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity cursor-default"
+        >
+          <svg viewBox="0 0 50 50" class="w-10 h-10">
+            <circle cx="25" cy="25" r="23" fill="#e8f5e0" />
+            <circle cx="25" cy="20" r="9" fill="#2e8b22" />
+            <path d="M25 29 L20 40 L30 40Z" fill="#2e8b22" />
+          </svg>
+          <span class="text-xs font-bold text-gray-500 uppercase tracking-wider"
+            >Gardenpoint</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Scroll reveal
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e, i) => {
+            if (e.isIntersecting) {
+              setTimeout(() => {
+                e.target.style.transitionDelay = "0s";
+                e.target.classList.add("visible");
+              }, i * 60);
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+    </script>
+    <footer
+      class="bg-[#1a1a1a] text-white pt-16 pb-12 px-4 border-t-4 border-green-600"
+    >
+      <div
+        class="max-w-5xl mx-auto flex flex-col items-center text-center space-y-10"
+      >
+        <div class="flex flex-col items-center">
+          <div class="text-5xl font-black tracking-tighter text-white">
+            <img
+              src="assets/image/logo-garden.png"
+              width="210"
+              height="78"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <a
+            href="tel:0018182333456"
+            class="block text-2xl font-bold hover:text-green-500 transition-colors"
+          >
+            Call Us: 001 (818) 23 33 456
+          </a>
+          <p class="text-gray-400 text-sm tracking-wide">
+            1214 King Land Street, New York, USA
+          </p>
+        </div>
+
+        <button
+          class="bg-[#4CAF50] hover:bg-[#388E3C] text-white px-12 py-4 rounded-sm font-bold text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-lg"
+        >
+          Get a Free Quote
+        </button>
+
+        <div class="flex items-center gap-8 pt-4">
+          <a
+            href="#"
+            class="text-white hover:text-green-500 transition-transform hover:scale-110"
+          >
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.378 14.192 5 15.115 5H18V0h-3.808C10.596 0 9 1.583 9 4.615V8z"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="text-white hover:text-green-500 transition-transform hover:scale-110"
+          >
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="text-white hover:text-green-500 transition-transform hover:scale-110"
+          >
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.241 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="text-white hover:text-green-500 transition-transform hover:scale-110"
+          >
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <div class="w-full border-t border-gray-800 opacity-30 mt-8 pt-4">
+          <p class="text-[10px] text-gray-500">
+            © 2026 Xtra Garden. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

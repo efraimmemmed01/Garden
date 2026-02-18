@@ -1,11 +1,427 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Gardening Expert</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              greenMain: "#4db33d",
+              darkMain: "#1a1a1a",
+            },
+          },
+        },
+      };
+    </script> 
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="font-sans text-gray-600 overflow-x-hidden">
+     <header class="bg-[#1a1a1a] text-white py-6 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="text-4xl font-black tracking-tighter"><img src="assets/image/logo-garden.png" width="146"  height="46" alt=""></div>
+                
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-8 items-center">
+                <div class="flex items-center gap-3">
+                    <div class="bg-green-600 p-3 rounded-md">
+                        <svg class="w-6 h-6 fill-white" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400">Have any questions?</p>
+                        <p class="font-bold text-lg">+1 (818) 333 44 55</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 border-l border-gray-700 pl-8  lg:flex">
+                    <div class="bg-green-600 p-3 rounded-md">
+                        <svg class="w-6 h-6 fill-white" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400">Our office address</p>
+                        <p class="font-bold text-lg">1214 King Street, New York</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <ul class="hidden md:flex items-center gap-8 text-sm font-bold text-gray-700 uppercase tracking-tight">
+                    <li><a href="index.html" class="hover:text-green-600 transition-colors">Home</a></li>
+                    <li><a href="garden.html" class="hover:text-green-600 transition-colors">Gardening</a></li>
+                    <li><a href="service.html" class="hover:text-green-600 transition-colors">Services</a></li>
+                    <li><a href="projects.html" class="hover:text-green-600 transition-colors">Projects</a></li>
+                    <li><a href="blog.html" class="hover:text-green-600 transition-colors">Blog</a></li>
+                    <li><a href="shop.html" class="hover:text-green-600 transition-colors">Shop</a></li>
+                    <li class="group relative flex items-center gap-1 hover:text-green-600 cursor-pointer transition-colors">
+                        Pages <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </li>
+                    <li><a href="contact.html" class="hover:text-green-600 transition-colors">Contact</a></li>
+                </ul>
+
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2 border-r border-gray-200 pr-4  lg:flex">
+                        <a href="#" class="p-2 bg-gray-50 rounded hover:text-blue-600 transition-colors"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.378 14.192 5 15.115 5H18V0h-3.808C10.596 0 9 1.583 9 4.615V8z"/></svg></a>
+                        <a href="#" class="p-2 bg-gray-50 rounded hover:text-black transition-colors"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="#" class="p-2 bg-gray-50 rounded hover:text-pink-600 transition-colors"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                    </div>
+                    <button class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded font-bold text-sm transition-all shadow-md">Get a Free Quote</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- SECTION 1 -->
+    <section class="max-w-6xl mx-auto px-5 py-24">
+      <div class="grid md:grid-cols-2 gap-20 items-center">
+        <div class="relative">
+          <img class="w-full rounded" src="assets/image/p1-1.jpg" />
+
+          <div
+            class="absolute -bottom-8 -right-8 bg-white shadow-2xl p-6 w-350px rounded"
+          >
+            <div class="mb-4">
+              <div class="flex justify-between text-sm font-bold mb-1">
+                <span>Gardening Service</span>
+                <span class="percent-val" data-target="92">0%</span>
+              </div>
+              <div class="bg-gray-200 h-1 rounded">
+                <div
+                  class="progress-fill bg-greenMain h-full w-0 transition-all duration-3500ms"
+                  data-width="92"
+                ></div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <div class="flex justify-between text-sm font-bold mb-1">
+                <span>Remodeling Service</span>
+                <span class="percent-val" data-target="97">0%</span>
+              </div>
+              <div class="bg-gray-200 h-1 rounded">
+                <div
+                  class="progress-fill bg-greenMain h-full w-0 transition-all duration-3500ms"
+                  data-width="97"
+                ></div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <div class="flex justify-between text-sm font-bold mb-1">
+                <span>Maintenance Garden</span>
+                <span class="percent-val" data-target="88">0%</span>
+              </div>
+              <div class="bg-gray-200 h-1 rounded">
+                <div
+                  class="progress-fill bg-greenMain h-full w-0 transition-all duration-3500ms"
+                  data-width="88"
+                ></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm font-bold mb-1">
+                <span>Water Fountain Service</span>
+                <span class="percent-val" data-target="99">0%</span>
+              </div>
+              <div class="bg-gray-200 h-1 rounded">
+                <div
+                  class="progress-fill bg-greenMain h-full w-0 transition-all duration-3500ms"
+                  data-width="99"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-sm text-gray-400 mb-1">Why work with us?</p>
+          <h2 class="text-3xl font-extrabold">
+            Why Choose <span class="text-greenMain">Us?</span>
+          </h2>
+          <div class="w-10 h-3px bg-greenMain my-5"></div>
+          <p>
+            Once plants are in the garden, one of the biggest challenges is
+            keeping weeds, pests, and diseases out of the garden.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="max-w-6xl mx-auto px-5 py-24">
+      <div class="grid md:grid-cols-2 gap-20 items-center">
+        <div class="order-2 md:order-1">
+          <p class="text-sm text-gray-400 mb-1">About our company</p>
+          <h2 class="text-3xl font-extrabold">
+            A Little About Our <span class="text-greenMain">Gardening!</span>
+          </h2>
+          <div class="w-10 h-3px bg-greenMain my-5"></div>
+          <p>
+            Once plants are in the garden, one of the biggest challenges is
+            keeping weeds, pests, and diseases out of the garden.
+          </p>
+        </div>
+
+        <div class="relative order-1 md:order-2">
+          <img class="w-full rounded" src="assets/image/hau.jpg" />
+
+          <div
+            class="absolute -bottom-10 -left-8 bg-white shadow-2xl p-6 w-450px rounded"
+          >
+            <div class="grid grid-cols-2 gap-4">
+              <div class="flex gap-2">
+                <i class="fas fa-check-circle text-greenMain text-xl"></i>
+                <div>
+                  <strong class="text-sm">Pest and weeds</strong>
+                  <p class="text-xs text-gray-400">
+                    Pest control and weeds removal
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-2">
+                <i class="fas fa-check-circle text-greenMain text-xl"></i>
+                <div>
+                  <strong class="text-sm">Gardening Design</strong>
+                  <p class="text-xs text-gray-400">Landscaping Design</p>
+                </div>
+              </div>
+
+              <div class="flex gap-2">
+                <i class="fas fa-check-circle text-greenMain text-xl"></i>
+                <div>
+                  <strong class="text-sm">Maintenance</strong>
+                  <p class="text-xs text-gray-400">Hedge Trimming</p>
+                </div>
+              </div>
+
+              <div class="flex gap-2">
+                <i class="fas fa-check-circle text-greenMain text-xl"></i>
+                <div>
+                  <strong class="text-sm">Water fountain</strong>
+                  <p class="text-xs text-gray-400">Irrigation system</p>
+                </div>
+              </div>
+
+              <div class="flex gap-2">
+                <i class="fas fa-check-circle text-greenMain text-xl"></i>
+                <div>
+                  <strong class="text-sm">Soil erosion</strong>
+                  <p class="text-xs text-gray-400">Mulching</p>
+                </div>
+              </div>
+
+              <div class="flex gap-2">
+                <i class="fas fa-check-circle text-greenMain text-xl"></i>
+                <div>
+                  <strong class="text-sm">Restoration</strong>
+                  <p class="text-xs text-gray-400">Lawn restoration</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DARK COUNTER -->
+    <section class="bg-darkMain text-white py-28">
+      <div class="max-w-6xl mx-auto px-5 text-center">
+        <p class="text-gray-400">We have over 37 years of experience</p>
+
+        <h2 class="text-3xl font-extrabold mt-2">
+          We Are Expert in <span class="text-greenMain">Gardening</span>
+        </h2>
+
+        <div class="w-10 h-3px bg-greenMain mx-auto my-6"></div>
+
+        <div class="grid md:grid-cols-4 gap-10 mt-12">
+          <div>
+            <h1 class="count text-6xl font-bold" data-target="37">0</h1>
+            <p class="text-gray-400">Years of Experience</p>
+          </div>
+
+          <div>
+            <h1 class="count text-6xl font-bold" data-target="16">0</h1>
+            <p class="text-gray-400">Awards Winning</p>
+          </div>
+
+          <div>
+            <h1 class="count text-6xl font-bold" data-target="32">0</h1>
+            <p class="text-gray-400">Expert Gardeners</p>
+          </div>
+
+          <div>
+            <h1 class="count text-6xl font-bold" data-target="270">0</h1>
+            <p class="text-gray-400">Projects Done</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="max-w-6xl mx-auto px-5 py-24">
+      <div class="grid md:grid-cols-4 gap-4 mb-24">
+        <div class="bg-greenMain text-white p-8">
+          <h3 class="text-xl font-bold">Our Expert Team Members & Gardeners</h3>
+          <hr class="my-4 opacity-40" />
+          <p>Meet the team of expert gardeners & workers</p>
+        </div>
+
+        <img
+          class="w-full h-full object-cover rounded"
+          src="assets/image/t2.jpg"
+        />
+
+        <img
+          class="w-full h-full object-cover rounded"
+          src="assets/image/t1.jpg"
+        />
+
+        <img
+          class="w-full h-full object-cover rounded"
+          src="assets/image/t3.jpg"
+        />
+      </div>
+
+      <!-- PARTNERS -->
+      <div class="text-center">
+        <p class="text-sm text-gray-400">Happy clients and famous partners</p>
+
+        <h2 class="text-3xl font-extrabold">
+          Our <span class="text-greenMain">Customers</span> and Partners
+        </h2>
+
+        <div class="w-10 h-3px bg-greenMain mx-auto my-6"></div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mt-12">
+          <div class="grid grid-cols-3 gap-8 opacity-60">
+            <img src="assets/image/l1-1.jpg" />
+            <img src="assets/image/l2-1.jpg" />
+            <img src="assets/image/l3-1.jpg" />
+            <img src="assets/image/l4-1.jpg" />
+            <img src="assets/image/l5-1.jpg" />
+            <img src="assets/image/l6-1.jpg" />
+          </div>
+
+          <div class="bg-white border p-10">
+            <img
+              class="w-16 rounded-full border-4 border-greenMain mx-auto mb-4"
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+            />
+            <h4 class="font-bold">
+              John Englishman
+              <span class="text-sm text-gray-400">Professor</span>
+            </h4>
+            <p class="mt-4 text-gray-500">
+              "Our collection of plant combinations will help you find a stylish
+              look for anywhere in your garden."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer
+      class="bg-[#1a1a1a] text-white pt-16 pb-12 px-4 border-t-4 border-green-600"
+    >
+      <div
+        class="max-w-5xl mx-auto flex flex-col items-center text-center space-y-10"
+      >
+        <div class="flex flex-col items-center">
+          <div class="text-5xl font-black tracking-tighter text-white">
+            <img
+              src="assets/image/logo-garden.png"
+              width="210"
+              height="78"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <a
+            href="tel:0018182333456"
+            class="block text-2xl font-bold hover:text-green-500 transition-colors"
+          >
+            Call Us: 001 (818) 23 33 456
+          </a>
+          <p class="text-gray-400 text-sm tracking-wide">
+            1214 King Land Street, New York, USA
+          </p>
+        </div>
+
+        <button
+          class="bg-[#4CAF50] hover:bg-[#388E3C] text-white px-12 py-4 rounded-sm font-bold text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-lg"
+        >
+          Get a Free Quote
+        </button>
+
+        <div class="flex items-center gap-8 pt-4">
+          <a
+            href="#"
+            class="text-white hover:text-green-500 transition-transform hover:scale-110"
+          >
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.378 14.192 5 15.115 5H18V0h-3.808C10.596 0 9 1.583 9 4.615V8z"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="text-white hover:text-green-500 transition-transform hover:scale-110"
+          >
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="text-white hover:text-green-500 transition-transform hover:scale-110"
+          >
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.241 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="text-white hover:text-green-500 transition-transform hover:scale-110"
+          >
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <div class="w-full border-t border-gray-800 opacity-30 mt-8 pt-4">
+          <p class="text-[10px] text-gray-500">
+            © 2026 Xtra Garden. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="gardening.js"></script>
+  </body>
 </html>
